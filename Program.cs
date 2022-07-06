@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace E_mailDownloader
 {
@@ -19,6 +20,9 @@ namespace E_mailDownloader
                 foreach (var item in messages)
                 {
                     Console.WriteLine(item.Headers.From.DisplayName);
+                    Console.WriteLine("\n");
+
+                    SaverToDisc.SaveAndLoadFullMessage(item);
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
