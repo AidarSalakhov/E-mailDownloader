@@ -18,7 +18,7 @@ namespace E_mailDownloader
 
                 foreach (var item in messages)
                 {
-                    Console.WriteLine(item.MessagePart.ContentType);
+                    Console.WriteLine(item.Headers.From.DisplayName);
                 }
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); }
